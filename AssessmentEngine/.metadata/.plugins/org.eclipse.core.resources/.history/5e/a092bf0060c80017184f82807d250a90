@@ -1,0 +1,11 @@
+package com.stackroute.assessmentengine.examcreation.domian;
+
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection="questionPaper")
+public class QuestionPaper 
+{
+	
+	
+	
+}

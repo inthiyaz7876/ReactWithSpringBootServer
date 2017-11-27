@@ -1,0 +1,9 @@
+package com.stackroute.assessmentengine.examcreation.domian;
+
+public class CreateExam {
+	
+	private String examName;
+	private String[] studentsName;
+	
+
+}

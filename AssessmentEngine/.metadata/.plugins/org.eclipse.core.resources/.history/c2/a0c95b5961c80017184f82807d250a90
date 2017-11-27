@@ -1,0 +1,52 @@
+package com.stackroute.assessmentengine.examcreation.service;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.stereotype.Component;
+
+import com.stackroute.assessmentengine.examcreation.domian.QuestionPaper;
+
+//import com.stackroute.assessmentengine.examcreation.controller.KafkaController;
+
+
+
+public class ExamCreationServiceImpl implements ExamCreationService{
+
+	@Override
+	public String createQuestionPaper(QuestionPaper questionPaper) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+//	
+//	@Autowired
+//	private ExamCreationRepository examCreationRepository;
+//	private Exam exam;
+//	
+//
+//	
+//
+//
+//
+//	@Override
+//	public List<QuestionBank> getQuestions(QuestionBank examQuestions) {
+//		
+//		return (List<QuestionBank>) examCreationRepository.save(examQuestions);
+//		
+//	
+//	
+
+
+	}
+
+	
+	
+
+
+
+
+
+
+
+

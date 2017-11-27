@@ -1,0 +1,27 @@
+package com.stackroute.assessmentengine.examcreation.service;
+
+
+
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+
+
+
+
+@Service
+public interface ExamCreationService 
+{
+	
+	
+	
+public String createQuestionPaper(QuestionPaper questionPaper);
+	
+}
+
+
+
+
+

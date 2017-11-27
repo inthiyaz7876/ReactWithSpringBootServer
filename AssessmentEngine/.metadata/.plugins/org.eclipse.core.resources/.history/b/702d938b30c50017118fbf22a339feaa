@@ -1,0 +1,105 @@
+package com.stackroute.assessmentengine.examcreation.controller;
+
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.List;
+
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
+import org.springframework.web.util.UriComponentsBuilder;
+
+import com.stackroute.assessmentengine.examcreation.domian.Exam;
+import com.stackroute.assessmentengine.examcreation.qbdomain.QuestionBank;
+import com.stackroute.assessmentengine.examcreation.service.ExamCreationService;
+
+@RestController
+public class ExamCreationController 
+{
+	
+	 String uri="http://172.23.238.205:8081/questions";
+	@Autowired
+	ExamCreationService examCreationService;
+
+//	@RequestMapping(method=RequestMethod.POST, value="/create")
+//	public ResponseEntity<String> create(@RequestBody Exam exam)
+//	{
+//		examCreationService.create(exam);
+//		return ResponseEntity.ok("Exam saved Successfully");
+//	}
+	
+	@RequestMapping(method=RequestMethod.GET , value="/gettwo/{subject}")
+	public ResponseEntity<Exam> getExam(@PathVariable String subject)
+	{
+		return ResponseEntity.ok(examCreationService.findCustomBySubject(subject));
+		
+	}
+	/*@RequestMapping(method=RequestMethod.GET , value="/getall")
+	public ResponseEntity<List<Exam>> getAll()
+	{
+		return ResponseEntity.ok(examCreationService.getAll());
+	}
+	*/
+//	UriComponentsBuilder builder = UriComponentsBuilder.fromUriString(uri);
+//	RestTemplate restTemplate = new RestTemplate();
+//	QuestionBank response = restTemplate.getForObject(builder.toUriString(), QuestionBank.class);
+
+	
+	
+	
+	@RequestMapping(method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+	@ResponseStatus(HttpStatus.OK)
+	public QuestionBank createUser(@RequestBody QuestionBank questionBank) throws InvalidSignupException {
+
+	   // a load of business logic that validates the user model
+
+	   RestTemplate restTemplate = new RestTemplate();
+	    restTemplate.setMessageConverters(Arrays.asList(new MappingJackson2HttpMessageConverter()));
+	    ResponseEntity<Boolean> response = restTemplate.postForEntity("http://localhost:8090/availability",
+	            userModel.getUsername(), Boolean.class);
+	    System.out.println(response.getBody());
+
+	   // a load more business logic
+
+	   return userModel;
+	}
+	
+	
+	
+	
+	
+	
+	
+//	@RequestMapping(method=RequestMethod.GET , value=ENDPOINT+"/questions")
+//	public ResponseEntity<List<QuestionBank>> getQuestions(@PathVariable QuestionBank questionBank) 
+//	{	
+//		List<QuestionBank> all=examCreationService.getQuestions(questionBank);
+//		System.out.println("Data saving successfully");
+//		return ResponseEntity.ok(all);
+//		
+//	}
+//	;
+
+	
+
+
+}
+
+
+
+
+

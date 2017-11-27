@@ -1,0 +1,4 @@
+GitRepositoriesView.GitDirectories=/home/user/Documents/StackRoute/feign-eureka/.git\:/home/user/Documents/StackRoute/movie_cruiser_boilerplate/.git\:/home/user/Documents/StackRoute/PiggyMetrics/.git\:
+GitRepositoriesView.GitDirectories.relative=/home/user/Documents/StackRoute/feign-eureka/.git\:/home/user/Documents/StackRoute/movie_cruiser_boilerplate/.git\:/home/user/Documents/StackRoute/PiggyMetrics/.git\:
+core_autoIgnoreDerivedResources=false
+eclipse.preferences.version=1

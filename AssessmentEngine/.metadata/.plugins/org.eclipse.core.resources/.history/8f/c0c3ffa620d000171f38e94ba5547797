@@ -1,0 +1,33 @@
+package com.stackroute.assessmentengine.examcreation.domian;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class CreateExam 
+{
+	List<QuestionPaper> list;
+	
+	List<String> students;
+
+	public List<QuestionPaper> getList() {
+		return list;
+	}
+
+	public void setList(List<QuestionPaper> list) {
+		this.list = list;
+	}
+
+	public List<String> getStudents() {
+		return students;
+	}
+
+	public void setStudents(List<String> students) {
+		this.students = students;
+	}
+	public CreateExam()
+	{
+		this.list=new ArrayList<>();
+		this.students=new ArrayList<>();
+	}
+
+}

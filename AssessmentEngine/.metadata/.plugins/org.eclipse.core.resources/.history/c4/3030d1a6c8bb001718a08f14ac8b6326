@@ -1,0 +1,16 @@
+spring:
+ data:
+   mongodb:
+     host: localhost
+     username: inthu
+     password: root123
+     port: 27017
+     database: assessment
+     repositories:
+       enabled: true
+     authentication-database: admin
+     
+server.port=8017
+spring.kafka.bootstrap-servers=172.23.238.218
+spring.kafka.consumer.group-id=test1
+topic=test

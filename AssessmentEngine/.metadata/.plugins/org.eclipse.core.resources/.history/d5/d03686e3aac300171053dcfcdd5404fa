@@ -1,0 +1,40 @@
+package com.example.demo.domain;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class QuestionBank 
+{
+	private String id;
+	private String question;
+	private List<options> options;
+	public QuestionBank() {
+		super();
+		this.options=new ArrayList<>();
+	}
+	public QuestionBank(String id, String question, List<com.example.demo.domain.options> options) {
+		super();
+		this.id = id;
+		question = question;
+		this.options = options;
+	}
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
+	public String getQuestion() {
+		return question;
+	}
+	public void setQuestion(String question) {
+		question = question;
+	}
+	public List<options> getOptions() {
+		return options;
+	}
+	public void setOptions(List<options> options) {
+		this.options = options;
+	} 
+
+}

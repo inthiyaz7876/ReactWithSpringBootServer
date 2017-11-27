@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="org.springframework.cloud.netflix.eureka.server.EnableEurekaServer"/>
+<fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+<fullyQualifiedTypeName name="com.stackroute.assessmentengine.examcreation.domian.Model"/>
+<fullyQualifiedTypeName name="com.stackroute.assessmentengine.examcreation.repository.ExamCreationRepository"/>
+<fullyQualifiedTypeName name="java.lang.Override"/>
+<fullyQualifiedTypeName name="com.stackroute.assessmentengine.examcreation.controller.KafkaController"/>
+<fullyQualifiedTypeName name="java.io.Closeable"/>
+<fullyQualifiedTypeName name="java.util.Map"/>
+<fullyQualifiedTypeName name="com.netflix.discovery.provider.Serializer"/>
+<fullyQualifiedTypeName name="scala.Serializable"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PostMapping"/>
+<fullyQualifiedTypeName name="javax.ws.rs.Produces"/>
+<fullyQualifiedTypeName name="javax.ws.rs.Consumes"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestBody"/>
+<fullyQualifiedTypeName name="com.stackroute.assessmentengine.examcreation.domian.Exam"/>
+<fullyQualifiedTypeName name="org.apache.tomcat.util.http.parser.MediaType"/>
+<fullyQualifiedTypeName name="org.springframework.http.MediaType"/>
+<fullyQualifiedTypeName name="org.springframework.cloud.netflix.feign.EnableFeignClients"/>
+<fullyQualifiedTypeName name="org.springframework.cloud.netflix.feign.FeignClient"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestParam"/>
+<fullyQualifiedTypeName name="org.springframework.http.ResponseEntity"/>
+<fullyQualifiedTypeName name="com.stackroute.assessmentengine.examcreation.qbdomain.QuestionBank"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ResponseBody"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PathVariable"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="org.springframework.http.HttpStatus"/>
+</qualifiedTypeNameHistroy>

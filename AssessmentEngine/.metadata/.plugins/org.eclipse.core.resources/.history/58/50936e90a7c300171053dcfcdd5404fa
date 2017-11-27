@@ -1,0 +1,10 @@
+package com.example.demo.service;
+
+import com.example.demo.domain.Exam;
+import com.example.demo.domain.QuestionBank;
+
+public interface QuestionBankService 
+{
+	public QuestionBank create(QuestionBank questionBank);
+	public Exam getQuestions(Exam exam);
+}

@@ -1,0 +1,32 @@
+spring:
+ data:
+   mongodb:
+     host: localhost
+     username: inthu
+     password: root123
+     port: 27017
+     database: assessment
+     repositories:
+       enabled: true
+     authentication-database: admin
+     
+     
+     
+     
+server.port=8074
+spring.kafka.bootstrap-servers=172.23.238.133:9092
+spring.kafka.consumer.group-id=test3
+
+topic=questionrequest
+topic2=questionrespose
+
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    serviceUrl:
+      defaultZone: http://localhost:8980/ 
+  instance:
+    hostname: localhost
+    appname: "ExamCreationService"

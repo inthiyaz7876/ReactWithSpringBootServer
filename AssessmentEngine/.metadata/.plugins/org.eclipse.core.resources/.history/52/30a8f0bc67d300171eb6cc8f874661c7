@@ -1,0 +1,15 @@
+spring:
+ data:
+   mongodb:
+     host: 172.23.238.205
+     username: raju
+     password: royal
+     port: 27017
+     database: sample
+     repositories:
+       enabled: true
+     authentication-database: admin
+          
+server.port=8074
+
+

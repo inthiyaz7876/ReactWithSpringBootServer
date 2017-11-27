@@ -1,0 +1,93 @@
+package com.example.demo.domain;
+
+
+@Document(collection="questiopnbank")
+public class Exam {
+
+	@Override
+	public String toString() {
+		return "Exam [id=" + id + ", subject=" + subject + ", topic=" + topic + ", level=" + level + ", complexity="
+				+ complexity + ", mcq=" + mcq + ", peragraph=" + peragraph + ", trueorFalse=" + trueorFalse + "]";
+	}
+public Exam() {
+	
+}
+public Exam(String id, String subject, String topic, String level, String complexity, String mcq, String peragraph,
+			String trueorFalse) {
+		super();
+		this.id = id;
+		this.subject = subject;
+		this.topic = topic;
+		this.level = level;
+		this.complexity = complexity;
+		this.mcq = mcq;
+		this.peragraph = peragraph;
+		this.trueorFalse = trueorFalse;
+	}
+@Id
+	private String id;
+	private String subject;
+	private String topic;
+	private String level;
+	private String complexity;
+	private String mcq;
+	private String peragraph;
+	private String trueorFalse;
+	
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
+	public String getSubject() {
+		return subject;
+	}
+	public void setSubject(String subject) {
+		this.subject = subject;
+	}
+	public String getTopic() {
+		return topic;
+	}
+	public void setTopic(String topic) {
+		this.topic = topic;
+	}
+	public String getLevel() {
+		return level;
+	}
+	public void setLevel(String level) {
+		this.level = level;
+	}
+	public String getComplexity() {
+		return complexity;
+	}
+	public void setComplexity(String complexity) {
+		this.complexity = complexity;
+	}
+	public String getMcq() {
+		return mcq;
+	}
+	public void setMcq(String mcq) {
+		this.mcq = mcq;
+	}
+	public String getPeragraph() {
+		return peragraph;
+	}
+	public void setPeragraph(String peragraph) {
+		this.peragraph = peragraph;
+	}
+	public String getTrueorFalse() {
+		return trueorFalse;
+	}
+	public void setTrueorFalse(String trueorFalse) {
+		this.trueorFalse = trueorFalse;
+	}
+	
+}
+
+
+
+
+
+
+

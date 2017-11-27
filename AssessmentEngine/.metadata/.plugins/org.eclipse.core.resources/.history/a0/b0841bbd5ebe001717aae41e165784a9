@@ -1,0 +1,5 @@
+package com.student.domain;
+
+public class Student {
+
+}

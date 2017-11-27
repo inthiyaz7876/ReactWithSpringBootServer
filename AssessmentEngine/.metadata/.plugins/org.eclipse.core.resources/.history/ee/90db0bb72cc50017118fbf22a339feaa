@@ -1,0 +1,106 @@
+package com.stackroute.assessmentengine.examcreation.controller;
+
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.List;
+
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
+
+import com.stackroute.assessmentengine.examcreation.domian.Exam;
+import com.stackroute.assessmentengine.examcreation.qbdomain.QuestionBank;
+import com.stackroute.assessmentengine.examcreation.service.ExamCreationService;
+
+@RestController
+public class ExamCreationController 
+{
+	@Autowired
+	ExamCreationService examCreationService;
+
+//	@RequestMapping(method=RequestMethod.POST, value="/create")
+//	public ResponseEntity<String> create(@RequestBody Exam exam)
+//	{
+//		examCreationService.create(exam);
+//		return ResponseEntity.ok("Exam saved Successfully");
+//	}
+	
+	@RequestMapping(method=RequestMethod.GET , value="/gettwo/{subject}")
+	public ResponseEntity<Exam> getExam(@PathVariable String subject)
+	{
+		return ResponseEntity.ok(examCreationService.findCustomBySubject(subject));
+		
+	}
+	/*@RequestMapping(method=RequestMethod.GET , value="/getall")
+	public ResponseEntity<List<Exam>> getAll()
+	{
+		return ResponseEntity.ok(examCreationService.getAll());
+	}
+	*/
+	
+	public List<QuestionBank> listOfQuestions() throws IOException, JAXBException 
+	{
+	String uri="http://172.23.238.205:8081/questions";
+	URL url = new URL(uri);
+	HttpURLConnection connection =
+		    (HttpURLConnection) url.openConnection();
+	connection.setRequestMethod("GET");
+	connection.setRequestProperty("Accept", "application/json");
+	JAXBContext jc = JAXBContext.newInstance(QuestionBank.class);
+	InputStream json = connection.getInputStream();
+	List<QuestionBank> questionBank =
+	    (List<QuestionBank>) jc.createUnmarshaller().unmarshal(json);
+
+connection.disconnect();
+	return questionBank;
+	}
+	
+	
+	@RequestMapping(method=RequestMethod.GET , value="/hi")
+	public ResponseEntity<List<QuestionBank>> getQuestions() throws IOException, JAXBException
+	{
+	
+		ExamCreationController  examController =new ExamCreationController();
+		List<QuestionBank> all=examController.listOfQuestions();
+		System.out.println(all);
+		return ResponseEntity.ok(all);
+		
+	}
+	public static final String REST_SERVICE_URI = "http://172.23.238.205:8081";
+
+	@RequestMapping(method=RequestMethod.GET , value="/getRest")
+	public ResponseEntity<List<QuestionBank>> getAll()
+	{
+		RestTemplate restTemplate = new RestTemplate();
+		System.out.println("nnnnnnnnnnyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy");
+        QuestionBank usersMap = restTemplate.getForObject(REST_SERVICE_URI+"/questions/", QuestionBank.class);
+        if(usersMap!=null) {
+        	System.out.println("yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy");
+        }else {
+        	System.out.println("nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn");
+        }
+        System.out.println("hi......................................................................."+usersMap);
+		return null;
+		
+	}
+
+
+}
+
+
+
+
+

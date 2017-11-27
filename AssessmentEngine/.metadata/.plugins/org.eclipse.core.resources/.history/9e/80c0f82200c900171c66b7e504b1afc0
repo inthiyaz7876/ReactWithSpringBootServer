@@ -1,0 +1,12 @@
+package com.stackroute.assessmentengine.examcreation.domian;
+
+import org.springframework.data.annotation.Id;
+
+Document(collection="new")
+public class Ex {
+
+	@Id
+	private String id;
+	private String name;
+	private String add;
+}

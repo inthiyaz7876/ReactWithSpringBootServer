@@ -1,0 +1,9 @@
+package com.stackroute.assessmentengine.examcreation.repository;
+
+import org.springframework.data.mongodb.repository.MongoRepository;
+
+import com.stackroute.assessmentengine.examcreation.domian.CreateExam;
+
+public interface ExamRepo extends MongoRepository<CreateExam, String>{
+
+}

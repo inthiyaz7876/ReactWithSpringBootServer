@@ -1,0 +1,9 @@
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    serviceUrl:
+      defaultZone: http://localhost:8980/eureka/ 
+  instance:
+    hostname: localhost
+    appname: "ExamCreationService"

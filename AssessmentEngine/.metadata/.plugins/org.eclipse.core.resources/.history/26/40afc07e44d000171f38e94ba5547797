@@ -1,0 +1,14 @@
+package com.stackroute.assessmentengine.examcreation.domian;
+
+import java.util.ArrayList;
+
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection="ExamPaperFinal")
+public class CreateExam {
+	
+	private String examName;
+	private String[] studentsName;
+	
+
+}
